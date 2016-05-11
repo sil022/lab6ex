@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
     private String keyString;
     private EditText value;
     private String valueString;
+    private Button show;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         setupInfo();
+        show = (Button) findViewById(R.id.button3);
+        show.setVisibility(View.INVISIBLE);
 
     }
 
@@ -61,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
         valueString=value.getText().toString();
         editor.putString(keyString,valueString );
         editor.apply();
+        show.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                show.setVisibility(View.VISIBLE);
+            }
+        },10000);
     }
 
     public void show(View view){

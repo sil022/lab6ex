@@ -2,10 +2,7 @@ package com.example.sijia.lab6ex1;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.IBinder;
-import android.widget.EditText;
 import android.widget.Toast;
 
 /**
